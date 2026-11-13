@@ -1,0 +1,53 @@
+{
+  "$schema_version": "1.0",
+  "systems": {
+    "ps2": {
+      "display_name": "PlayStation 2",
+      "archive_folder": "ps2",
+      "accepted_extensions": [".iso", ".bin", ".img", ".cso", ".chd"],
+      "compression": {
+        "enabled": true,
+        "preferred_format": ".chd",
+        "action": "convert"
+      },
+      "saves": {
+        "type": "memory_card",
+        "extension": ".ps2",
+        "strategy": "per_region_or_shared",
+        "notes": "Richiede file memory card virtuali o cartelle dedicate per slot."
+      }
+    },
+    "snes": {
+      "display_name": "Super Nintendo",
+      "archive_folder": "snes",
+      "accepted_extensions": [".sfc", ".smc", ".zip", ".7z"],
+      "compression": {
+        "enabled": true,
+        "preferred_format": ".zip",
+        "action": "compress"
+      },
+      "saves": {
+        "type": "battery_save",
+        "extension": ".srm",
+        "strategy": "exact_match_filename",
+        "notes": "Il file di save ha lo stesso nome della ROM ma estensione .srm"
+      }
+    },
+    "psp": {
+      "display_name": "PlayStation Portable",
+      "archive_folder": "psp",
+      "accepted_extensions": [".iso", ".cso"],
+      "compression": {
+        "enabled": true,
+        "preferred_format": ".cso",
+        "action": "convert"
+      },
+      "saves": {
+        "type": "folder_savedata",
+        "extension": null,
+        "strategy": "folder_id_match",
+        "notes": "I salvataggi sono cartelle con ID alfanumerico (es. ULUS10036)"
+      }
+    }
+  }
+}
